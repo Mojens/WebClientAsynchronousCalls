@@ -9,6 +9,7 @@ import com.example.webclientasynchronouscallspart2.service.GenderService;
 import com.example.webclientasynchronouscallspart2.service.NationalityService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
@@ -25,8 +26,8 @@ public class NameController {
     this.nationalityService = nationalityService;
   }
 
-  @RequestMapping("/info/{name}")
-  public NameResponse getInfoName(@PathVariable("name") String name) {
+  @RequestMapping("/info")
+  public NameResponse getInfoName(@RequestParam String name) {
     long start = System.currentTimeMillis();
 
     Mono<AgeResponse> ageResponse = this.ageService.getAgeResponse(name);
