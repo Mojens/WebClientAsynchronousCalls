@@ -5,15 +5,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class NameResponse {
+public class NationalityResponse {
 
+  private ArrayList<CountryResponse> country;
   private String name;
-  private int age;
-  private String gender;
-  private String country;
-
 }

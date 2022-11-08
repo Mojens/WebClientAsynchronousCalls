@@ -9,11 +9,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class NameResponse {
+public class AgeResponse {
 
-  private String name;
   private int age;
-  private String gender;
-  private String country;
-
+  private int count;
+  private String name;
 }
