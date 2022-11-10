@@ -26,8 +26,8 @@ public class NameController {
     this.nationalityService = nationalityService;
   }
 
-  @RequestMapping("/info")
-  public NameResponse getInfoName(@RequestParam String name) {
+  @RequestMapping("/info/{name}")
+  public NameResponse getInfoName(@PathVariable("name") String name) {
     long start = System.currentTimeMillis();
 
     Mono<AgeResponse> ageResponse = this.ageService.getAgeResponse(name);
