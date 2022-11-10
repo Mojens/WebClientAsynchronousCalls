@@ -2,7 +2,6 @@ package com.example.webclientasynchronouscallspart2.dto;
 
 import lombok.*;
 
-import java.util.Locale;
 
 @NoArgsConstructor
 @Getter
