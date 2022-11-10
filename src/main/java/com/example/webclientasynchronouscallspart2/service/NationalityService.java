@@ -8,10 +8,12 @@ import reactor.core.publisher.Mono;
 @Service
 public class NationalityService {
 
+  private final String uri = System.getenv("nationalAPI");
+
   public Mono<NationalityResponse> getNationality(String name){
     return WebClient.create()
         .get()
-        .uri("https://api.nationalize.io?name="+name)
+        .uri(uri+name)
         .retrieve()
         .bodyToMono(NationalityResponse.class);
   }

@@ -8,10 +8,12 @@ import reactor.core.publisher.Mono;
 @Service
 public class AgeService {
 
+  private final String uri = System.getenv("ageAPI");
+
   public Mono<AgeResponse> getAgeResponse(String name) {
     return WebClient.create()
         .get()
-        .uri("https://api.agify.io?name=" + name)
+        .uri(uri + name)
         .retrieve()
         .bodyToMono(AgeResponse.class);
   }

@@ -8,10 +8,12 @@ import reactor.core.publisher.Mono;
 @Service
 public class GenderService {
 
+  private final String uri = System.getenv("genderAPI");
+
   public Mono<GenderResponse> getGenderResponse(String name) {
     WebClient client = WebClient.create();
     Mono<GenderResponse> gender = client.get()
-        .uri("https://api.genderize.io?name="+name)
+        .uri(uri+name)
         .retrieve()
         .bodyToMono(GenderResponse.class);
     return gender;
