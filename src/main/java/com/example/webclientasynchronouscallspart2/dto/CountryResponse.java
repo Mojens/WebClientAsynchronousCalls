@@ -12,10 +12,5 @@ public class CountryResponse {
 
   private String country_id;
   private double probability;
-  private String country;
 
-  public String getCountry() {
-    return
-        new Locale("en",country_id).getDisplayCountry();
-  }
 }

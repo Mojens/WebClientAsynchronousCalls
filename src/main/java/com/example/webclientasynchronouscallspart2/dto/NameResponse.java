@@ -12,8 +12,18 @@ import lombok.ToString;
 public class NameResponse {
 
   private String name;
-  private int age;
   private String gender;
+  private double genderProbability;
+  private int age;
+  private int ageCount;
   private String country;
+  private double countryProbability;
 
+  public void setCountryProbability(double countryProbability) {
+    this.countryProbability = countryProbability * 100;
+  }
+
+  public void setGenderProbability(double genderProbability) {
+    this.genderProbability = genderProbability * 100;
+  }
 }

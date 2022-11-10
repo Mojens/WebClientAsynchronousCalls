@@ -16,7 +16,4 @@ public class GenderResponse {
   private String name;
   private double probability;
 
-  public String getGender() {
-    return gender;
-  }
 }

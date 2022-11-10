@@ -39,11 +39,18 @@ public class NameController {
 
       nameResponse.setName(name);
 
-      nameResponse.setAge(t.getT1().getAge());
-
       nameResponse.setGender(t.getT2().getGender());
 
-      nameResponse.setCountry(t.getT3().getCountry().get(0).getCountry());
+      nameResponse.setGenderProbability(t.getT2().getProbability());
+
+      nameResponse.setAge(t.getT1().getAge());
+
+      nameResponse.setAgeCount(t.getT1().getCount());
+
+      nameResponse.setCountry(t.getT3().getCountry().get(0).getCountry_id());
+
+      nameResponse.setCountryProbability(t.getT3().getCountry().get(0).getProbability());
+
 
       long end = System.currentTimeMillis();
 
